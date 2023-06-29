@@ -1,0 +1,15 @@
+import pickle
+from sklearn.linear_model import LogisticRegression
+
+# Create an instance of the LogisticRegression model with desired parameters
+model = LogisticRegression(penalty='l2', solver='lbfgs', max_iter=100)
+
+# Train the model with your data
+X_train = ...  # Your training data
+y_train = ...  # Your target variable
+model.fit(X_train, y_train)
+
+# Save the trained model as a pickle file
+filename = 'logistic_regression_model.pkl'
+with open(filename, 'wb') as file:
+    pickle.dump(model, file)
